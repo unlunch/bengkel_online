@@ -1,0 +1,46 @@
+
+:root {
+	--theme-blue-1: #1B3265;
+	--theme-blue-2: #22577A;
+	--theme-green: #80ED99;
+	--theme-gray-1: #848583;
+	--theme-gray-2: #AFB1B1;
+	--theme-gray-3: #C0C2C2;
+	--theme-bg: #FCFBF8;
+	--theme-border: #ced4da;
+}
+
+
+.navbar{
+    height: 75px !important;
+    background-color: brown;
+}
+
+.text-brand{
+    font-family: serif;
+    font-size: 28px;
+    margin-left: 50px;
+
+}
+
+.wrench{
+    position: fixed;
+}
+
+#footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	max-width: 500px;
+	background-color: #FFF;
+	border-top: 1px solid var(--theme-gray-3);
+}
+
+.footer-active {
+	color: var(--theme-blue-1) !important;
+}
+
+#jumbotron {
+    margin-top: 50px;
+    background-image: url('../img/bg-jumbroton.png');
+}
