@@ -8,8 +8,13 @@
 	--theme-gray-3: #C0C2C2;
 	--theme-bg: #FCFBF8;
 	--theme-border: #ced4da;
+	--theme-brown2:brown;
+	--theme-white:#ffffff;
 }
 
+.fill-nav {
+	color: var(--theme-gray-1);
+}
 
 .navbar{
     height: 75px !important;
@@ -19,8 +24,11 @@
 .text-brand{
     font-family: serif;
     font-size: 28px;
-    margin-left: 50px;
+}
 
+.fill-i{
+	margin-bottom: 3px;
+	color: var(--theme-white);
 }
 
 .wrench{
@@ -37,10 +45,80 @@
 }
 
 .footer-active {
-	color: var(--theme-blue-1) !important;
+	color: var(--theme-brown2) !important;
 }
 
 #jumbotron {
     margin-top: 50px;
     background-image: url('../img/bg-jumbroton.png');
+}
+
+.text-center {
+    font-size: 45px;
+}
+
+#jumbotron-text {
+    color: black;
+    height: 32vh;
+}
+
+/* Card item */
+.container-product .product-items {
+	box-shadow: 0px 0px 6px rgba(38, 50, 56, 0.1);
+	border-radius: 5px;
+	background-color: #fff;
+	min-height: 220px;
+	margin: 8px 8px;
+	width: calc(50% - 16px) !important;
+	padding: 8px;
+}
+
+.container-product .product-items .product-cover {
+	width: calc(100%);
+	object-fit: cover;
+	border-radius: 5px;
+	padding-bottom: 90%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.product-items:hover {
+	text-decoration: none;
+}
+
+.container-products {
+	margin-bottom: 100px;
+}
+/* End Card Item */
+
+.input-group-text.btn:active,
+.input-group-text.btn:hover {
+    color: #fff !important;
+    background-color: var(--theme-brown2) !important;
+    border-color:black !important;
+}
+
+.input-group-text.btn:focus,
+#search:focus {
+    box-shadow: none !important;
+    border-color: var(--theme-gray-1);
+}
+
+.input-search {
+	padding-top: 8px !important;
+	padding-bottom: 8px !important;
+    border-radius: 0.25rem !important;
+}
+
+.header-template{
+	margin-top: 70px;
+}
+
+.text-catalog{
+	font-family: serif;
+	font-size: 28px;
+}
+#drowdown{
+	width: 70px !important;
 }
