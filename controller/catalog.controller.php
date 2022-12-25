@@ -10,7 +10,11 @@ class CatalogController extends CatalogModel
             'data' => $this->catalogSearch($data),
             'status' => true,
             'result' => true,
-            // 'all_data' => $this->catalogAllDAta($data)
+            'all_data' => $this->catalogAllDAta($data)
         ]);
+    }
+
+    public function create()
+    {
     }
 }
