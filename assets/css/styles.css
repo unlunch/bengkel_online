@@ -119,6 +119,28 @@
 	font-family: serif;
 	font-size: 28px;
 }
-#drowdown{
+
+.text-sort{
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+#dropdown{
 	width: 70px !important;
+}
+
+.dropdown-sort-by {
+	position: relative;
+	display: inline-block;
+	width: 150px !important;
+}
+
+.tombol-tambah{
+	margin-left: 150px;
+	/* margin-top: 8px; */
+	margin-bottom: 2px;
+}
+
+#div-sort{
+	margin-bottom: -90px;
 }

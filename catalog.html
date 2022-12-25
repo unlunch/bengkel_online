@@ -1,9 +1,9 @@
 <div class="header-template">
-    <div class="p-3">
+    <div class="p-3 pb-2" style="margin-bottom:-20px">
         <span class="text-catalog">Catalog</span>
         <div class="form-inline mt-3">
             <div class="input-group mb-2 w-100">
-                <input class="form-control p-4 input-search" type="search" name="search" id="search"
+                <input class="form-control p-2 input-search" type="search" name="search" id="search"
                     placeholder="Cari..." aria-label="Cari..." autocomplete="off"
                     style="margin-right: 10px !important;">
                 <button class="input-group-text btn btn-outline-success" type="button" id="search-btn">
@@ -18,16 +18,18 @@
     </div>
 </div>
 
-<div class="pl-3">
-    <div class="form-group">
-        <label for="drowdown">Sort by :
-            <select class="form-control" id="drowdown">
-                <option>All</option>
-                <option>Ban Motor</option>
-                <option>Oli Motor</option>
-                <option>Aki Motor</option>
-            </select>
-        </label>
+<div class="p-2 div-sort">
+    <span class="text-sort">
+        Sort by :
+    </span>
+    <select class="custom-select dropdown-sort-by">
+        <option selected>All</option>
+        <option value="1">Oli Motor</option>
+        <option value="2">Ban Motor</option>
+        <option value="3">Aki Motor</option>
+    </select>
+    <div class="tombol-tambah">
+        <button type="button" class="btn btn-dark tombol-tambah">Tambah</button>
     </div>
 </div>
 
