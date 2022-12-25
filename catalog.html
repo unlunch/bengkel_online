@@ -22,11 +22,11 @@
     <span class="text-sort">
         Sort by :
     </span>
-    <select class="custom-select dropdown-sort-by">
-        <option selected>All</option>
-        <option value="1">Oli Motor</option>
-        <option value="2">Ban Motor</option>
-        <option value="3">Aki Motor</option>
+    <select class="custom-select dropdown-sort-by" onchange="setType(this.value)">
+        <option selected value="all">All</option>
+        <option value="Oli motor">Oli Motor</option>
+        <option value="Ban motor">Ban Motor</option>
+        <option value="Aki motor">Aki Motor</option>
     </select>
     <div class="tombol-tambah">
         <button type="button" class="btn btn-dark tombol-tambah">Tambah</button>
@@ -40,3 +40,10 @@
     </div>
 </div>
 </div>
+
+<script>
+    $("#search").on("keypress", (e) => {
+        if (e.key === "Enter") search()
+    });
+    $("#search-btn").click(() => search());
+</script>
