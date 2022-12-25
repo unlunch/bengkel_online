@@ -66,7 +66,7 @@ function info() {
 }
 
 
-function fetch(limit, start, name, type, ) {
+function fetch(limit, start, name, type) {
     $.ajax({
         url: "/api/catalog.php?f=search",
         type: "post",
@@ -146,3 +146,19 @@ $(window).scroll(function () {
         }, 1000);
     }
 });
+
+function search() {
+    $("#load_data").html("");
+    start = 0;
+    lazzy_loader(limit);
+    action = "active";
+    name = $("#search").val();
+    setTimeout(function () {
+        fetch(limit, start, name, type);
+    }, 1000);
+}
+
+const setType = (newType) => {
+    type = newType == "all" ? "" : newType;
+    search()
+}

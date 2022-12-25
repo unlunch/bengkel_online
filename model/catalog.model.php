@@ -8,9 +8,9 @@ class CatalogModel extends Connection
     {
         $sql = "SELECT * FROM product";
         if ($data->search->name && $data->search->type) {
-            $sql .= " WHERE name LIKE '%{$data->search->name}%' AND type = '{$data->search->type}'";
+            $sql .= " WHERE nama LIKE '%{$data->search->name}%' AND type = '{$data->search->type}'";
         } elseif ($data->search->name) {
-            $sql .= " WHERE name LIKE '%{$data->search->name}%'";
+            $sql .= " WHERE nama LIKE '%{$data->search->name}%'";
         } elseif ($data->search->type) {
             $sql .= " WHERE type = '{$data->search->type}'";
         }
@@ -29,9 +29,9 @@ class CatalogModel extends Connection
     {
         $sql = "SELECT * FROM product";
         if ($data->search->name && $data->search->type) {
-            $sql .= " WHERE name LIKE '%{$data->search->name}%' AND type = '{$data->search->type}'";
+            $sql .= " WHERE nama LIKE '%{$data->search->name}%' AND type = '{$data->search->type}'";
         } elseif ($data->search->name) {
-            $sql .= " WHERE name LIKE '%{$data->search->name}%'";
+            $sql .= " WHERE nama LIKE '%{$data->search->name}%'";
         } elseif ($data->search->type) {
             $sql .= " WHERE type = '{$data->search->type}'";
         }
