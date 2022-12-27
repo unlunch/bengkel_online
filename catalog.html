@@ -29,7 +29,8 @@
         <option value="Aki motor">Aki Motor</option>
     </select>
     <div class="tombol-tambah">
-        <button type="button" class="btn btn-dark tombol-tambah">Tambah</button>
+        <button type="button" class="btn btn-dark tombol-tambah" data-toggle="modal"
+            data-target="#modalCatalog">Tambah</button>
     </div>
 </div>
 
@@ -41,9 +42,149 @@
 </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="modalCatalog" tabindex="-1" aria-labelledby="modalCatalogLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="create-catalog">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name">Nama Produk</label>
+                        <input type="name" class="form-control" id="name" name="name" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Harga</label>
+                        <input type="price" class="form-control" id="price" name="price" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Tipe</label>
+                        <select class="form-control" name="type" id="type" required>
+                            <option value="Oli motor">Oli Motor</option>
+                            <option value="Ban motor">Ban Motor</option>
+                            <option value="Aki motor">Aki Motor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Gambar</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="img" name="img" required>
+                            <label class="custom-file-label" id="custom-file-label">Upload gambar...</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Edit -->
+<div class="modal fade" id="modalEditCatalog" tabindex="-1" aria-labelledby="modalEditCatalogLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="edit-catalog">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="name-edit">Nama Produk</label>
+                        <input type="text" class="form-control" id="name-edit" name="name-edit" autocomplete="off"
+                            required>
+                        <input type="hidden" class="form-control" id="id" name="id" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <label for="price-edit">Harga</label>
+                        <input type="text" class="form-control" id="price-edit" name="price-edit" autocomplete="off"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type-edit">Tipe</label>
+                        <select class="form-control" name="type-edit" id="type-edit" required>
+                            <option value="Oli motor">Oli Motor</option>
+                            <option value="Ban motor">Ban Motor</option>
+                            <option value="Aki motor">Aki Motor</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="img-edit">Gambar</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="img-edit" name="img-edit">
+                            <label class="custom-file-label" id="custom-file-label-edit">Upload gambar...</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteCatalog(this)" id="btn-delete"
+                        data-id="">Hapus</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
 <script>
+
     $("#search").on("keypress", (e) => {
         if (e.key === "Enter") search()
     });
     $("#search-btn").click(() => search());
+
+    $('input[type="file"]').change(function (e) {
+        $('#custom-file-label').html(e.target.files[0].name);
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            img = e.target.result;
+        };
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    $("form#create-catalog").submit(function (e) {
+        e.preventDefault();
+        let data = $(this).closest('form').serializeArray();
+        var reader = new FileReader();
+        data[data.length] = {
+            name: 'img',
+            value: img,
+        }
+        createCatalog(data);
+    });
+
+    $('#img-edit').change(function (e) {
+        $('#custom-file-label-edit').html(e.target.files[0].name);
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            img_edit = e.target.result;
+        };
+        reader.readAsDataURL(this.files[0]);
+    });
+
+    $("form#edit-catalog").submit(function (e) {
+        e.preventDefault();
+        let form = $(this).closest('form').serializeArray();
+        form[form.length] = {
+            name: 'img',
+            value: img_edit,
+        }
+        data = {};
+        form.forEach((v, i) => {
+            key = v.name.replace("-edit", "")
+            data[key] = v.value;
+        });
+        editCatalog(data);
+    });
 </script>
