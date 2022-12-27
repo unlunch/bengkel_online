@@ -1,3 +1,7 @@
+body{
+	max-width: 500px !important;
+	margin:auto;
+}
 
 :root {
 	--theme-blue-1: #1B3265;
@@ -9,7 +13,9 @@
 	--theme-bg: #FCFBF8;
 	--theme-border: #ced4da;
 	--theme-brown2:brown;
+	--theme-brown3:rgb(132, 31, 31);
 	--theme-white:#ffffff;
+	
 }
 
 .fill-nav {
@@ -18,7 +24,10 @@
 
 .navbar{
     height: 75px !important;
-    background-color: brown;
+	/* width: 500px;
+	margin: auto; */
+	/* color:rgb(51, 204, 82); */
+	background-color: brown;
 }
 
 .text-brand{
@@ -50,7 +59,8 @@
 
 #jumbotron {
     margin-top: 50px;
-    background-image: url('../img/bg-jumbroton.png');
+	object-fit: contain !important;
+	background-image: url('../img/bg-jumbroton.png');
 }
 
 .text-center {
@@ -116,6 +126,7 @@
 }
 
 .text-catalog{
+	font-weight: bold !important;
 	font-family: serif;
 	font-size: 28px;
 }
@@ -136,11 +147,64 @@
 }
 
 .tombol-tambah{
-	margin-left: 150px;
-	/* margin-top: 8px; */
+	/* margin: auto; */
+	margin-left: 120px;
+	margin-top: 8px;
 	margin-bottom: 2px;
 }
 
 #div-sort{
 	margin-bottom: -90px;
+}
+
+.bodytext1{
+	font-weight: bold;
+	color: black !important 	;
+}
+
+.bodytext2{
+	color: var(--theme-gray-1) !important;
+}
+
+.bodytext3{
+	color: rgb(210, 93, 16);
+}
+
+.btn-dark{
+	background-color: brown;
+}
+
+/* Modal */
+
+.btn-outline-theme:focus {
+	outline: none;
+	box-shadow: none;
+	color: #fff !important;
+    background-color: var(--theme-blue-1) !important;
+    border-color: var(--theme-blue-1) !important;
+}
+
+.form-control:focus,
+.custom-file-input:focus ~ .custom-file-label {
+	border-color: var(--theme-border);
+	box-shadow: none;
+}
+
+.btn-primary {
+	background-color: var(--theme-brown2);
+    border-color: var(--theme-brown3);
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:hover {
+	background-color: #1d3874 !important;
+    border-color: #1d3874 !important;
+}
+
+.btn:focus,
+.btn:active,
+.btn:hover {
+	outline: none !important;
+	box-shadow: none !important;
 }
