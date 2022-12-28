@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link rel="stylesheet" href="assets/css/shimer.css" />
+
+    <link rel="manifest" href="manifest.json" />
 </head>
 
 <body>
@@ -20,13 +22,6 @@
                     class="d-inline-block align-top" />
                 Moto Completa
             </a>
-            <div class="align-self-center" onclick="info()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
-                    class="bi bi-info-circle-fill fill-i" viewBox="0 0 16 16" id="info">
-                    <path
-                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
-                </svg>
-            </div>
     </section>
 
     <section id="content">
@@ -56,11 +51,11 @@
                         d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
                 </svg>
             </div>
-            <div class="align-self-center" onclick="cost()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                    class="bi bi-calendar3-event-fill fill-nav" viewBox="0 0 16 16" id="cost">
-                    <path fill-rule="evenodd"
-                        d="M2 0a2 2 0 0 0-2 2h16a2 2 0 0 0-2-2H2zM0 14V3h16v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm12-8a1 1 0 1 0 2 0 1 1 0 0 0-2 0z" />
+            <div class="align-self-center" onclick="info()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                    class="bi bi-info-circle-fill fill-nav" viewBox="0 0 16 16" id="info">
+                    <path
+                        d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.93-9.412-1 4.705c-.07.34.029.533.304.533.194 0 .487-.07.686-.246l-.088.416c-.287.346-.92.598-1.465.598-.703 0-1.002-.422-.808-1.319l.738-3.468c.064-.293.006-.399-.287-.47l-.451-.081.082-.381 2.29-.287zM8 5.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2z" />
                 </svg>
             </div>
         </div>
@@ -71,5 +66,11 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/sweetalert.js"></script>
 </body>
+
+<script>
+    $(document).ready(function () {
+        ($('body').contents('div').remove());
+    });
+</script>
 
 </html>

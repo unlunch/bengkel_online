@@ -40,7 +40,15 @@ function catalog() {
         url: "catalog.html",
         success: function (response) {
             $("#content").html(response);
-            fetch(limit, start, name, type);
+            name = $("#search").val();
+            start = 0;
+            lazzy_loader(limit);
+            if (action == "inactive") {
+                action = "active";
+                setTimeout(function () {
+                    fetch(limit, start, name, type);
+                }, 1000);
+            }
         },
     });
 }
@@ -63,7 +71,7 @@ function info() {
         text: "Moto Completa v.1.0",
         icon: "info",
         confirmButtonText: "Tutup",
-        confirmButtonColor: "#2a64eb",
+        confirmButtonColor: "#3085d6",
     });
 }
 

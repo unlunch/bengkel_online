@@ -35,11 +35,6 @@ body{
     font-size: 28px;
 }
 
-.fill-i{
-	margin-bottom: 3px;
-	color: var(--theme-white);
-}
-
 .wrench{
     position: fixed;
 }
@@ -70,6 +65,10 @@ body{
 #jumbotron-text {
     color: black;
     height: 32vh;
+}
+
+.text-moto{
+	font-size: 30px;
 }
 
 /* Card item */
@@ -127,8 +126,8 @@ body{
 
 .text-catalog{
 	font-weight: bold !important;
-	font-family: serif;
-	font-size: 28px;
+	font-family: sans-serif;
+	font-size: 30px;
 }
 
 .text-sort{
@@ -207,4 +206,25 @@ body{
 .btn:hover {
 	outline: none !important;
 	box-shadow: none !important;
+}
+
+.text-home-product{
+	margin-top:-25px;
+	background-color: brown;
+	border-radius: 20px;
+	display: grid;
+	text-align: center;
+	margin-bottom: 20px;
+	padding: 10px;
+	color: whitesmoke;
+}
+
+.css-about{
+	text-align: center;
+}
+
+.font-barang{
+	font-size: 30px;
+	font-weight: bold;
+	font-family: sans-serif;
 }

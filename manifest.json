@@ -1,0 +1,22 @@
+{
+    "name": "Moto Completa",
+    "short_name": "Moto Completa",
+    "description": "Aplikasi Bengkel Online PWA dengan JS",
+    "icons": [
+        {
+            "src": "assets/img/icon-513.png",
+            "sizes": "513x513",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/img/icon-193.png",
+            "sizes": "193x193",
+            "type": "image/png"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#1B3265",
+    "background_color": "#ffffff",
+    "prefer_related_applications": false
+}
